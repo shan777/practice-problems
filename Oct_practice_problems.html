@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript"></script>
+<script>
+
+//put each char in the array then leave only letters and replace #s w/ new #s
+//i will come back to it! :)
+//wait.. i can use regax!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/*    function addNumToString(str) {
+        if (!parseInt(str.charAt(str.length-1))) //if the last char is not a number
+            str = str + '1';
+        else {
+            var i=1;
+            numStr = [];
+            do {
+                numStr.unshift(str.charAt(str.length-i));
+                i++;
+            } while (parseInt(str.charAt(str.length-i)));
+            var finalNum = '';
+            for (var j=0; j<numStr.length; j++) {
+                finalNum=finalNum+numStr[j];
+            }
+            var numToAppend;
+            numToAppend = parseInt(finalNum) + 1;
+        }    
+        return str +numToAppend;
+    }
+
+
+console.log(addNumToString('foo12'));
+*/
+
+////////////////////////////////// 10/9/2018 /////////////////////////////////
+/*
+Write a function, which takes a non-negative integer as seconds and returns the time in a human-readable format 
+(HH:MM:SS). The maximum time never exceeds 359999 (99:59:59)
+
+examples:
+`humanReadable(5) //returns "00:00:05"`
+`humanReadable(60)  //returns "00:01:00"`
+`humanReadable(86399) //returns "23:59:59"`
+
+
+function humanReadable(num) {
+    if(num<60) {
+        if (num<10)
+            num="0"+num;
+        return "00:00:"+num;
+    } else if (num<3600) {
+        var min = parseInt(num/60);
+        var remainder = num%60;
+        
+        return "00:"+min+":"+remainder;
+    } else {
+        var hr = parseInt(num/60/60);
+        var min = parseInt(num%60);
+        var remainder = num%60;
+        return hr+":"+min+":"+remainder;
+    }
+}
+
+console.log('answer is: ',humanReadable(5));
+*/
+
+
+//////////////////////////////////// 10/10/2018 ////////////////////////////////
+/* 
+Create two functions to encode and then decode a string using the Rail Fence Cipher. This cipher is used to encode a string by placing each character successively in a diagonal along a set of "rails". First start off moving diagonally and down. When you reach the bottom, reverse direction and move diagonally and up until you reach the top rail. Continue until you reach the end of the string. Each "rail" is then read left to right to derive the encoded string. You can optionally include or dis-include punctuation.
+
+For example, the string "WEAREDISCOVEREDFLEEATONCE" could be represented in a three rail system as follows:
+
+W       E       C       R       L       T       E
+ E   R   D   S   O   E   E   F   E   A   O   C
+   A       I       V       D       E       N
+The encoded string would be:
+
+WECRLTEERDSOEEFEAOCAIVDEN
+Write a function/method that takes 2 arguments, a string and the number of rails, and returns the ENCODED string.
+
+Write a second function/method that takes 2 arguments, an encoded string and the number of rails, and returns the DECODED string.
+
+For both encoding and decoding, assume number of rails >= 2 and that passing an empty string will return an empty string.
+
+Note that the example above excludes the punctuation and spaces just for simplicity. Don't filter out the punctuation as they are a part of the string.
+*/
+
+
+/////////////////// 10/15/2018 /////////////////////////////////////////////
+/* count the number of "9"s in the numbers
+example)
+number9(8) //should return 0
+number9(9) //should return 1
+number9(10) //should return 1
+number9(98) //should return 18
+number9(100) //should return 20
+*/
+
+function findNines (num) {
+    var counter = 0;
+    var nine = /[9*]/gm;
+    for (var i=0; i<=num; i++) {
+        var n = i.toString();
+        if (n.match(nine)) {
+            result=n.match(nine);
+            counter = counter + result.length;
+        }
+    }
+    console.log(`9 in ${num}: ${counter} `);
+}
+findNines(8) //should return 0
+findNines(9) //should return 1
+findNines(10) //should return 1
+findNines(98) //should return 18
+findNines(100) //should return 20
+
+</script>
+</head>
+<body>
+
+</body>    
+</html>

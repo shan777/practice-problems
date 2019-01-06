@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="function drills">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>function drills</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        /*
+    find cube: determine whether each number in an array is the square root of the next
+    for example:
+    input:
+    [2, 4, 16, 256]
+    ,
+
+    output:
+    true
+    */
+
+    function cubeSequence( numbers ) {
+
+    }
+
+    /*
+    make change: return an object, given a particular number less than 1 dollar, what
+    change would be required to equal it
+    input:
+    88
+    output:
+    {
+    25: 3,
+    10: 1,
+    5: 1,
+    1: 3
+    }
+    */
+
+    function makeChange( amount ) {
+
+    }
+
+    /*
+    detect haiku:  given an array with strings,
+    and the strings with words (syllables separated by hyphens), determine if the array
+    is in the form of a haiku (5-7-5)
+    for example:
+
+    input:
+    ['oh we love to code'],
+    ['mak-ing our dreams rea-li-ty'],
+    ['show me the mo-ney']
+    output:
+    true
+    */
+    function detectHaiku( lines ) {
+
+    }
+
+    /*
+    expandCode: given a code of letters and numbers, based on the number
+    expand the following letters by the number times.  Return that expanded string
+    input:
+    "4dude3hello"
+    output:
+
+    "dudedudedudedudehellohellohello"
+
+    */
+    function expandCode(string) {
+
+    }
+
+    /* test code, do not change */
+
+    var testVals = [{
+    question: `find cube: determine whether each number in an array is the square root of the next`,
+    testVals: {
+    inputs: [
+    [[2, 4, 16, 256]],
+    [[3,9,72,6561]]
+
+    ],
+    outputs:
+    [true, false]
+    },
+    functionToTest: 'cubeSequence'
+    }, {
+    question: `make change: return an object, given a particular number less than 1 dollar, what
+    change would be required to equal it`,
+    testVals: {
+    inputs: [
+    [88],[93]
+    ],
+    outputs: [
+    {
+    25: 3,
+    10: 1,
+    5: 0,
+    1: 3
+    },
+    {
+    25: 3,
+    10: 1,
+    5: 1,
+    1: 3
+    },
+    ]
+    },
+    functionToTest: 'makeChange'
+    }, {
+    question: `alphabet flip: given a particular string,
+    flip all the letters (not spaces or punctuation)
+    to the letter on the opposite side of the alphabet`,
+    testVals: {
+    inputs: [
+    [
+    ['oh we love to code','mak-ing our dreams now come true','show me the mo-ney']
+    ],
+    [
+    ['what a bles-sed day','clack clack clack the key-boards go','logic bends to my will']
+    ],
+    [
+    ['is this hai-ku','no! too few lines it has','yoda knows poetry']
+    ],
+    ],
+    outputs: [
+    true,
+    true,
+    false
+    ]
+    },
+    functionToTest: 'detectHaiku'
+    }, {
+    question: `write a function that takes in a string and condences
+    it down tothe letter Z as many times as possible with the remaining
+    letter at the end`,
+    testVals: {
+    inputs: [
+    ["4dude3hello"], ["2bottles3beer"]
+    ],
+    outputs: [
+    "dudedudedudedudehellohellohello",
+    "bottlesbottlesbeerbeerbeer"
+    ]
+    },
+    functionToTest: 'expandCode'
+    }]
+
+    function unitTest(testData) {
+    for (var testI = 0; testI < testData.length; testI++) {
+    var currentTestSet = testData[testI].testVals;
+    for (var ioIndex = 0; ioIndex < currentTestSet.inputs.length; ioIndex++) {
+    var testInputs = currentTestSet.inputs[ioIndex];
+    var jsonInputs = JSON.stringify(testInputs, null, 2);
+    var testOutputs = currentTestSet.outputs[ioIndex];
+    var result = window[testData[testI].functionToTest].apply(null, testInputs);
+    var jsonResult = JSON.stringify(result, null, 2);
+    var jsonAnswer = JSON.stringify(testOutputs, null, 2);
+    var status = 'incorrect';
+    if (jsonResult === jsonAnswer) {
+    status = 'correct';
+    }
+    displayMessage('<strong>Question ' + (testI + 1) + ' Test ' + (ioIndex + 1) + '&gt;&gt;&gt;</strong> ' + testData[testI].question, jsonInputs, jsonAnswer, jsonResult, status);
+    }
+    }
+    }
+
+    function displayMessage(questionText, inputs, expected, answer, mode) {
+    var questionContainer = $("<div>", {
+    html: questionText,
+    'class': 'question'
+    });
+    var inputContainer = $("<div>", {
+        html: '<pre class="inputs">Test Inputs:\n' + inputs + "</pre>"
+        })
+        var resultContainer = $("<div>", {
+            'class': mode,
+            text: mode.toUpperCase() + '!'
+            })
+            var answerContainer = $("<div>", {
+                'class': mode,
+                html: `<aside>Expected:</aside> <pre>${expected}</pre><aside>Your answer:</aside><pre>${answer}<pre>`
+  })
+  questionContainer.append(inputContainer, resultContainer, answerContainer);
+  $("body").append(questionContainer);
+}
+
+
+unitTest(testVals);
+//end of code.
+</script>
+<style>
+        .correct{
+            background-color: lightgreen;
+        }
+        .incorrect{
+            background-color: red;
+            color: white;
+        }
+        .correct, .incorrect{
+            font-family: monospace;
+        }
+        .question{
+            border-bottom: 3px solid black;
+            margin-bottom: 5px;
+        }
+        .question aside{
+            background-color: black;
+            font-weight: bold;
+            font-family: 'arial';
+        }
+        .question .correct aside, .question .incorrect aside{
+            padding: 2% 2%
+        }
+        .question .correct aside{
+            color: lime;
+        }
+        .question .incorrect aside{
+            color: red;
+        }
+        .inputs{
+            font-size: 90%;
+            font-weight: bold;
+        }
+</style>
+</head>
+<body>
+
+</body>
+</html>

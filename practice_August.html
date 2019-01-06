@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="function drills">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>function drills</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+// August 14, 2018
+        // function findWhiteOrBlack (spot) {
+        //     var alphabetAry = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+        //     //I'm going to assign array index+1 to the first one in the array by adding 1 after finding the actual index for the array
+        //     //if array index and vertical number are both odd/odd or even/even, return black
+        //     //if odd/even or even/odd, return white
+        //     var alphabet = spot.charAt(0);
+        //     var num = spot.charAt(1);
+        //     var found = false;
+        //     var i=0;
+        //     var aryIndexFound;
+        //     while (!found && i<alphabetAry.length) {
+        //         if ( alphabet === alphabetAry[ i ] ) {
+        //             aryIndexFound = i+1; //because I want to start assigning number from 1, not 0
+        //             found = true;
+        //         } else {
+        //             i++;
+        //         }
+        //     }
+        //     if ( (aryIndexFound%2 === 0 && num%2 === 1) || (aryIndexFound%2 === 1 && num%2 === 0))
+        //         return 'white';
+        //     else if ( (aryIndexFound%2 === 1 && num%2 === 1) || (aryIndexFound%2 === 0 && num%2 === 0))
+        //         return 'black';
+        //     else
+        //         return 'something is wrong';
+        // }
+        //
+        // console.log(findWhiteOrBlack('e7'));
+
+
+//August 16, 2018
+//input: ['arp', 'live', 'pen', 'strong']
+//       ['alive', 'harp', 'armstrong', 'warp', 'toll']
+//output: ['arp', 'live', 'strong']
+//find any of the ones in the 2nd array in th the 2nd array and put in the output
+// function findSubstring (substringAry, fullstringAry) {
+//     var outputAry = [];
+//     for (var i=0; i<substringAry.length; i++) {
+//         for (var k=0; k<fullstringAry.length; k++) {
+//             if (fullstringAry[k].indexOf(substringAry[i]) !== -1) {
+//                 outputAry.push(substringAry[ i ]);
+//                 break; //break out of the inner for loop
+//             }
+
+            //steve's code
+                    // for    i i < ary1.length
+                    // for j j < ary2.length
+                    // var test = ary2[ j ].split(ary1[ i ]);
+                    //ex) ary2[j]=welcome, ary1[i]=com, test=[wel, e]
+                    //ex) ary2[j]=welcome, ary1[i]=come, test=[wel, ""]
+                    //ex) ary2[j]=welcome, ary1[i]=xyz, test=[welcome]
+                    //ex) ary2[j]=welcome, ary1[i]=welcome, test=["",""]
+                    //original array doesn't change
+                    //if it finds substring, length is always >1
+
+
+            // chaise's
+                    // if ( test.length > 1 ) {   ---->if substring is not there then test is the original string so length is 1!
+                    //--> if there is the substring
+                    //     result.put(array1[ i ]);
+                    //     break; //comes out of the loop
+                    // }
+
+            // mine :((((
+                    // if (fullstringAry[i].includes(substringAry[k]))
+                    // outputAry.push(substringAry[ k ]);
+                    //
+                    // for (var m=0; m<outputAry.length; m++) {
+                    //         console.log('substring ary: '+substringAry[k]);
+                    //         if (substringAry[k] === outputAry[m]) {
+                    //             outputAry.pop();
+                    //             console.log('bcuz it alreadys exists in outputAry '+substringAry[k]+' was just removed');
+                    //         }
+                    // }
+
+            //steve's working .include :P
+                    // for (var i = 0; i < array1.length; i++){
+                    //     for(var j = 0; j < array2.length; j++){
+                    //         if (array2[j].includes(array1[i])){
+                    //             result.push(array1[i]);
+                    //             break;
+                    //         }
+                    //     }
+                    // }
+            //     }
+            // }
+        //     return outputAry;
+        // }
+        //
+        // var output = findSubstring(['arp', 'live', 'pen', 'strong'], ['alive', 'harp', 'armstrong', 'warp', 'toll']);
+        // console.log('answer is ',output);
+
+
+/////////////////// practice problem 8/20/2018 /////////////////////////////////
+        //input BRRBRRBRRB
+        //always starts w/ the blue bead and ends w/ a blue bead
+        //B: blue bead; R: red bead
+        //input blue bead count, return red bead count
+        // function countRedBeads (blueBeadCount) {
+        //     var redBeadCount;
+        //     if (blueBeadCount === 1) {
+        //         return 0;
+        //     } else {
+        //         redBeadCount = 2 * (blueBeadCount-1);
+        //         return redBeadCount;
+        //     }
+        // }
+        //
+        // console.log(countRedBeads(1));
+        // console.log(countRedBeads(2));
+        // console.log(countRedBeads(3));
+        // console.log(countRedBeads(4));
+        // console.log(countRedBeads(5));
+
+
+
+
+///////////////// find vowel count and consonant count with a given string
+/*
+write a function, given a word, that returns an object
+with the count of vowels and consonants in it
+input:
+    'stupify'
+output:
+    {
+       vowels: 2,
+       consonants: 5
+    }
+*/
+ /*       function findVowelConsonant (wordStr) {
+            var vowels = 'aeiou';
+            var consonants = 'bcdfghjklmnpqrstvwxyz';
+            var vowelCount=0, consonantCount=0;
+            var vowelFound, consonantFound;
+            var obj={};
+            for (var i=0; i<wordStr.length; i++) {
+                vowelFound=false, consonantFound=false;
+                for (var k=0; k<vowels.length; k++) {
+                    if ( wordStr.charAt(i) === vowels.charAt(k) && !vowelFound ) {
+                        vowelCount++;
+                        vowelFound = true;
+                        console.log('letter '+wordStr.charAt(i)+' is a vowel');
+                    }
+                }
+                for (var m=0; m<consonants.length; m++) {
+                    if (wordStr.charAt(i) === consonants.charAt(m) && !consonantFound) {
+                        consonantCount++;
+                        consonantFound = true;
+                        console.log('letter '+wordStr.charAt(i)+' is a consonant');
+
+                    }
+                }
+            }
+            obj={
+                vowel: vowelCount,
+                consonant: consonantCount
+            };
+            return obj;
+        }
+
+        console.log(findVowelConsonant(  "supercalifragilisticexpialidocious!"));
+ */
+
+/////////////////////////////////// below code doesn't work :((((((((((((((((((((((((((
+//     function findDirection (givenArray) {
+//         var answerAry = [];
+//         var missionCompleted = false;
+//         var target, found, i;
+//         var north = 'N';
+//         var south = 'S';
+//         var east = 'E';
+//         var west = 'W';
+//         //while (!missionCompleted) {
+//             i=1;
+//             found=false;
+//             target = givenArray[0];
+//             while (!found && i<givenArray.length) {
+//                 console.log('array: ' + givenArray);
+//                 if ( target===north && givenArray[ i ]===south ) {
+//                     console.log('inside if');
+//                     found = true;
+//                     givenArray.splice(i,1);
+//                     givenArray.splice(0,1);
+//
+//                 } else {
+//                     console.log('inside else and i equals to '+i);
+//                     i++;
+//                 }
+//                 if ( target===south && givenArray[ i ]===north ) {
+//                     console.log('inside if');
+//                     found = true;
+//                     givenArray.splice(i,1);
+//                     givenArray.splice(0,1);
+//
+//                 } else {
+//                     console.log('inside else and i equals to '+i);
+//                     i++;
+//                 }
+//                 if ( target===east && givenArray[ i ]===west ) {
+//                     console.log('inside if');
+//                     found = true;
+//                     givenArray.splice(i,1);
+//                     givenArray.splice(0,1);
+//
+//                 } else {
+//                     console.log('inside else and i equals to '+i);
+//                     i++;
+//                 }
+//                 if ( target===west && givenArray[ i ]===east ) {
+//                     console.log('inside if');
+//                     found = true;
+//                     givenArray.splice(i,1);
+//                     givenArray.splice(0,1);
+//
+//                 } else {
+//                     console.log('inside else and i equals to '+i);
+//                     i++;
+//                 }
+//             }
+//         if (givenArray.length ===1 || (givenArray.length === 2 && !found))
+//             missionCompleted = true;
+//        // }
+//
+//
+//
+//         return givenArray;
+//     }
+//
+//     console.log(findDirection(['N', 'E', 'S', 'E', 'W', 'N']));
+
+
+/////////////////////////// practice problem 0824 //////////////////////////////////////
+//Write a function takes in a string, reverse the order of words with a length greater than 5
+// input::      hello my fellow warriors!
+// output::     olleh my wollef !sroirraw
+
+// function reverseOrder (str) {
+//     var strstr = str.split(' ');
+//     console.log(strstr);
+//     var revStr;
+//     var reversedChar;
+//     for ( var i = 0; i < strstr.length; i++ ) {
+//         if (strstr[i].length >= 5) {
+//             revStr = '';
+//             var tempStr = strstr[i];
+//             for (var j=strstr[i].length-1; j>=0; j--) {
+//                 reversedChar = tempStr[j];
+//                 revStr = revStr + reversedChar;
+//             }
+//             console.log('revStr: '+revStr);
+//             strstr[i] = revStr;
+//         }
+//     }
+//     var answer = '';
+//     for ( var i = 0; i < strstr.length; i++ ) {
+//         if (i===strstr.length-1)
+//             answer = answer + strstr[i];
+//         else
+//             answer = answer + strstr[i] + ' ';
+//     }
+//     return answer;
+// }
+//
+// console.log(reverseOrder('hello my fellor warriors!'));
+
+
+
+// function myFunction() {
+//     // document.getElementById("demo").style.color = "red";
+//     $('#demo').css({'color':'red'});
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+////////////////// 8/28/2018 /////////////////////////////////////////////////////
+//////////////////////////////////////////////////matching bracket////////////////
+// input:  "(){}{()}"
+// output:  true
+//input:   "(}" ")("
+//output:   false
+///////////////////////////////////////////////////////
+// function checkMatchingBracket ( strOfBrackets ) {
+//     var openBrackets = "({[";
+//     var closingBrackets = ")}]";
+//     var indexFound = null;
+//     var bracketAry = [];
+//     if (strOfBrackets.length%2 === 1) //if odd number of brackets, then impossible to have matching brackets
+//         return false;
+//     else{ 
+//         for (var i=0; i<closingBrackets.length; i++) {
+//             if (strOfBrackets.charAt(0) === closingBrackets.charAt(i)) { //if the first char is one of the closing brackets, then return false
+//                 return false;
+//             } else {
+//                 for (var i=0; i<strOfBrackets.length; i++) { //put the string into the array
+//                     bracketAry[i] = strOfBrackets.charAt(i);
+//                 }    
+//                 for (var m=0; m<bracketAry.length; m++) {
+//                     for (var d=0; d<openBrackets.length; d++) {
+//                         if (bracketAry[m] === openBrackets.charAt(d) )
+//                             indexFound = d;
+//                         for (var w=1; w<bracketAry.length; m++) {
+//                             if (bracketAry[w] === closingBrackets.charAt(indexFound)) {
+//                                 bracketAry.splice(m,1);
+//                                 bracketAry.splice(w,1);
+//                             }
+//                         }
+//                     }        
+//                 }
+//             }
+//         }
+//     }
+// }
+// console.log(checkMatchingBracket("(){}{()}"));
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+///////////////practice problem 8/29 ////////////////////////////////////////////////
+/////// write a function that flips the DNA SEQUENCE /////////////////////
+/// EX) "CATTAG"   ----> returns "GTAATC"
+// matching pairs: C and G, A and T
+// function flipDNAsequence ( dna ) {
+//     var newdna='';
+//     for (var i=0; i<dna.length; i++){
+//         switch (dna.charAt(i)) {
+//             case 'C':
+//                 newdna = newdna+ "G";
+//                 break;
+//             case 'G':
+//                 newdna = newdna+ "C";
+//                 break;
+//             case 'A':
+//                 newdna = newdna+  "T";
+//                 break;
+//             case 'T':
+//                 newdna = newdna+  "A";
+//                 break;    
+//         }
+//     }
+//     return newdna;   
+// }
+// console.log(flipDNAsequence('CATTAG'));
+
+/////////////////////// 8/30 practice problem /////////////////////////
+/*   input: 4, "h"
+     output: "H-Ii-Jjj-Kkkk"
+
+     input: 3
+     output: "A-Bb-Ccc"
+*/
+function practice(num, letter) {
+    var str='';
+    var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    if (letter) {
+            var found=false, k=0;
+            while (!found) {
+                if(alphabet.charAt(k) === letter)
+                    found=true;
+                else     
+                    k++;    
+            }
+    } else {
+        k=0;
+    }        
+    for (var i=0; i<num; i++) {
+        str = str + alphabet.charAt(k+i).toUpperCase();
+        
+        // rachel's way: 
+        str = str + alphabet.charAt(k+i).repeat(i);
+
+        // does the same job.. my way!
+        // for (var m=1; m<i+1; m++){
+        //     str = str + alphabet.charAt(k+i);
+        // }
+
+        if (i < num-1)
+            str = str + '-';
+    }
+    console.log(str);
+}
+practice(4, 'h');
+practice(3);
+
+</script>
+
+<style>
+</style>
+</head>
+<body>
+
+
+</body>
+</html>

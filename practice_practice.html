@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+
+<script>
+    function centuryFromYear (year) { //year is a number
+        var century;
+
+        // var centuryString = year.toString();
+        // var yearLength = centuryString.length;
+        // var thirdNum = centuryString.charAt(yearLength-1);
+        // var fourthNum = centuryString.charAt(yearLength-2);
+        //
+        // if (thirdNum === '0' && fourthNum === '0') {
+        //     century = year * 0.01;
+        // } else {
+            // century = Math.floor(year * 0.01) + 1; does the same job as below
+            century = Math.ceil(year/100);
+       // }
+        console.log(year + ' is ' + century + 'th century');
+        return century;
+    }
+    // centuryFromYear(1999);
+
+
+    //practice problem 8/7/2018
+    //input: "stress   output: "tre"
+    //DOESN'T WORK!!!!!!!!!!!!!!!!!!!!!! TRY AGAIN LATER!!!!!!!!!!!!!
+    function findUnrepeatedLetters (inputString) {
+        var outputString = inputString.charAt(0);
+        var k;
+        for ( var i = 1; i < inputString.length; i++ ) {
+            k=0;
+            var repeatedLetterFound = false;
+            while (k < outputString.length && !repeatedLetterFound) {
+                if (inputString.charAt(i) === outputString.charAt(k)) {
+                    repeatedLetterNotFound = false;
+                } else {
+                    outputString = outputString + inputString.charAt(i);
+                }
+                k++;
+            }
+        }
+        return outputString;
+    }
+    var answer = findUnrepeatedLetters('stress');
+    console.log("Unrepeated letters of the word stress is " + answer);
+
+    function fromSteve (string) {}
+        var result = '';
+        for (var i=0; i<string.length; i++) {
+            if (string.lastIndexOf(string[i]) === string.indexOf(string[i]))
+                result = result + string[i];
+    }
+
+    //use object.. {s:3, t:1, r:1, e:1} using two loops.. cody's suggestion
+    function makeLetterMap (str) {
+        var map = [];
+        for (var i=0; i<str.length; i++) {
+            var letter = str[i];
+            if (map[letter] === undefined)
+                map[letter] = 1;
+            else
+                map[letter] = map[letter] + 1;
+        }
+        return map;
+    }
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

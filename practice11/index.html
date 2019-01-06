@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+
+function evenOdds (numAry) {
+    var answer={
+        evens: [],
+        odds: []
+    };
+
+    for (var i=0; i<numAry.length; i++) {
+        if(numAry[i]%2 === 0) {
+            answer.evens.push(numAry[i]);
+        } else if(numAry[i]%2 === 1) {
+            answer.odds.push(numAry[i]);
+        }
+    }
+    console.log('odd: ', answer.odds);
+    console.log('even: ', answer.evens);
+}
+var evenodd = [2,5,1,6,8,2,20,'cat',13,3];
+console.log(evenOdds(evenodd));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
