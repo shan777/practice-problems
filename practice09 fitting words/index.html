@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+/*****************************************************************
+Build a function that takes in a string and an array of strings. 
+The function should output an array of strings that contain the same letters 
+as the single input string.
+
+- Write a function that takes two parameters
+	- Parameter 1 - A string
+	- Parameter 2 - An array of strings
+- The function should output all the words from the input array (parameter 2) 
+that have the same letters as the first parameter.  IE 'cat' has 'c','a', and 't', 
+and all words that have 'c','a', and 't' will be included.
+- Example:
+	- `var myArray = ['cat','caterpillar','whale','accurate','smile','cactus','cute'];`
+	- `fittingWords('cat', myArray);`
+	- Output - `['cat','caterpillar','accurate','cactus']`
+******************************************************************/   
+function findWords (str, ary) {
+	var newAry = []; 
+	var k, found;
+	for (var i=0; i<ary.length; i++){
+		found = false;
+		k=0, count=0;
+		while (k<str.length && !found){
+			if (ary[i].includes(str.charAt(k))) {
+				count++;
+				if (count === str.length && k===str.length-1){
+					found = true;
+					newAry.push(ary[i]); 
+				}	
+			}	
+			k++	
+		}
+	}
+	console.log(newAry);
+}
+var myArray = ['cat','caterpillar','whale','accurate','smile','cactus','cute'];
+findWords('cat', myArray);
+</script>
+</head>
+<body>
+
+</body>
+</html>

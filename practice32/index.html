@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        function findMiddleOfString (testString) {
+            for (var i=0; i<testString.length; i++) {
+                if (testString.length%2 === 0) {  //even number of letters
+                    middleOfString = testString[Math.ceil(testString.length/2)]+testString[Math.ceil(testString.length/2)+1];
+                }
+                else { //odd number of letters
+                    middleOfString = testString[Math.floor(testString.length/2)];
+                }
+            }
+            console.log(middleOfString);
+        }
+
+        findMiddleOfString('dish');
+        findMiddleOfString('seven');
+    </script>
+</head>
+<body>
+<!--find middle of string-->
+<!--Build a function, find_middle_letters, that finds the middle of a string.
+If the string is an odd number of characters, it returns 1 letter.
+If it is an even number of characters, it returns 2 characters. It takes a string as a parameter-->
+
+<!--Example:-->
+<!--find_middle_letters('seven')-->
+<!--Return: 'v'-->
+<!--find_middle_letters('dish')-->
+<!--Return: 'is'-->
+</body>
+</html>

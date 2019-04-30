@@ -8,7 +8,7 @@ Build a function that will translate text into "Pig Latin" Take the first conson
 	- Example: 
 		- `var myString = "Hello my name is Stu"`
 		- `translate(myString);
-		- Output - `"ellohay ymay ameya siay tusay"`
+		- Output - `"ellohay ymay amenay siay tusay"`
 
 #### Making it better!
 

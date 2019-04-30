@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript"></script>
+<script>
+///////////////////////// 9/10
+/*Input:*/
+var students = [
+  "George",
+  "Perry",
+  "Esther",
+  "Gerry",
+  "Chase",
+  "Steve",
+  "Mia",
+  "Sarah",
+  "Kyle",
+  "David",
+  "Michael",
+  "Rachel",
+  "Randy",
+  "Jonathan",
+  "Jaytrin",
+  "Hank",
+  "Torrie"
+];
+/*
+Output: 
+
+// C: ["Chase"]
+// D: ["David"]
+// E: ["Esther"]
+// G: ["George", "Gerry"]
+// H: ["Hank"]
+// J: ["Jonathan", "Jaytrin"]
+// K: ["Kyle"]
+// M: ["Mia", "Michael"]
+// P: ["Perry"]
+// R: ["Rachel", "Randy"]
+// S: ["Steve", "Sarah"]
+// T: ["Torrie"]```
+
+You will be writing a function that takes in a list of names as an array and will 
+be sorting all these names by the first character of their name. The returned output
+will be an object with each key as the sorted letter and the value being an array of names
+*/
+/*
+function reorder(nameAry) {
+    nameAry.sort();
+    var nameObj = {};
+    var letter;
+
+    for (var i=0; i<nameAry.length; i++) {
+        letter = nameAry[i].charAt(0);
+         if(!nameObj[letter]) {
+            nameObj[letter] = [];
+            nameObj[letter].push(nameAry[i]);
+         } else{
+            nameObj[letter].push(nameAry[i]);
+         }
+}
+    console.log(nameObj);
+}
+reorder(students); */
+
+//////////////////////////////////
+/*            9/11
+Make function move_zeros
+Take an array of values and moves number zeros to the end of array
+EX)
+input [false, 1, 0, 1, 2, 0, 'a', 3]
+return [false, 1, 1, 2, 'a', 3, 0, 0]
+*/
+function move_zeros(ary) {
+    var aryL = ary.length;
+    for (var i=0; i<aryL; i++) {
+        if (ary[i] === 0) {
+            ary.splice(i, 1);
+            ary.push(0);
+            aryL--;
+        }
+    }
+    console.log(ary);
+}
+
+var input = [false, 1, 0, 1, 2, 0, 'a', 3];
+move_zeros (input);
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // <!--Find the vowels-->
+        // <!--given a string, find all the vowels in the string. Store them in a new string-->
+        // <!--example:-->
+        //     <!--parameters: "four score and seven years ago"-->
+        // <!--return: "ouoeaeeeaao"-->
+        // <!--human-level instructions-->
+        // <!--create variable to store vowels-->
+        // <!--begin loop-->
+        // <!--get each letter, one at a time-->
+        // <!--compare it with each each vowel and see if it matches-->
+        // <!--if it is, add it to the vowel variable-->
+        // <!--repeat-->
+    function findVowel (givenString) {
+        var newString = [];
+        var vowels = 'aeiou';
+        var found;
+        var position;
+        for (var i=0; i<givenString.length; i++) {
+            position = 0;
+            found = false;
+            do {
+                if (givenString[i] ===vowels.charAt(position))
+                {
+                    newString = newString + givenString[ i ];
+                    found = true;
+                }
+                position++;
+            } while (! found && position <= givenString.length);
+        }
+        console.log(newString);
+    }
+
+    findVowel("four score and seven years ago");
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //~~~~~~~~~~~~~~~~~~~~~ NEXT PROBLEM ~~~~~~~~~~~~~~~~~~~~~~~~~
+    //input: var array = [2,3,52,4,324,634,34];
+    //output: [4, 52, 324, 3, 634, 2, 34]
+    var middleIndex;
+    middleIndex = Math.floor(array.length/2); //gives 3
+    var nextIndex = middleIndex;
+    console.log(array[nextIndex]);
+    for (i=1; i<array.length; i++) {
+        if (i%2 === 0) { //if even go to right
+            nextIndex = nextIndex+i;
+        }
+        else { //odd, go to left
+            nextIndex = nextIndex-i;
+        }
+        console.log(array[nextIndex]);
+    }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

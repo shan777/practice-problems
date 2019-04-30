@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+// Given the following function call:
+// - permutations('abc');
+
+// And the resulting output:
+// - ["abc", "acb", "bac", "bca", "cab", "cba"];
+
+// Create a function definition that achieves the output with the given input. 
+
+    function permutations (inputStr) {
+        var permutationsAry = [];
+        var newStr;
+        for (var i=0; i<inputStr.length; i++) {
+            newStr = inputStr.charAt(i);
+           console.log( inputStr.indexOf(i));
+            for (var j=1; j<inputStr.length; j++){
+                newStr = newStr + inputStr.charAt(j);console.log(newStr);
+                for (var k=2; k<inputStr.length; k++) {
+                    newStr = newStr + inputStr.charAt(k);console.log(newStr);
+                    console.log('newStr: ', newStr);
+                    
+
+                }
+            }
+            newStr = null;
+        }
+
+       
+    }
+
+console.log(permutations('abc'));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

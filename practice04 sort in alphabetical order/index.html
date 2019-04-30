@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+/*****************************************************************
+Build a function that takes in an array of strings and outputs a new array with the same strings in alphabetical order. 
+
+- Write a function that takes one parameter
+	- Parameter 1 - An Array of strings
+- The function should output an array containing all the strings from the input array but in alphabetical order
+- Example:
+	-`var myArray = ['mouse', 'cat', 'dog', 'human'];`
+	- `sort(myArray);`
+	- Output - `['cat', 'dog', 'human', 'mouse']`
+- Try doing this using a **Bubble Sort**
+ ******************************************************************/   
+    function sortAlphabetically (arrayOfWords) {
+        var temp, nochange=1;
+        while(nochange>0) {
+            nochange=0;
+            for (var i=0; i<arrayOfWords.length; i++) {
+                if (arrayOfWords[i]>arrayOfWords[i+1]) {
+                    temp = arrayOfWords[i];
+                    arrayOfWords[i] = arrayOfWords[i+1];
+                    arrayOfWords[i+1] = temp;
+                    nochange++;
+                }
+            }
+        }
+        return arrayOfWords;
+    }
+
+var myArray = ['mouse', 'cat', 'zibra', 'dog', 'cad', 'boy', 'human', 'abc'];
+console.log('original array: ', myArray);
+console.log(sortAlphabetically(myArray));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

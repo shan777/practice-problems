@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+//combine two strings and order in ascending order
+//arrayA = [1, 4, 23, 2, 11];
+//arrayB = [50, 100, 5, 29];
+//answer = [1, 2, 4, 5, 11, 23, 50, 100];
+
+    function combineThenOrder (arrayA, arrayB) {
+        var answerAry = arrayA.concat(arrayB);
+        
+        answerAry.sort(function(a, b){
+            return a-b;
+        });
+        console.log(answerAry);
+        
+       
+    }
+
+console.log(combineThenOrder([1, 4, 23, 2, 11], [50, 100, 5, 29] ));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
