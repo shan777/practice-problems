@@ -83,6 +83,22 @@ function checkForBlankString (input) {
 }
 // console.log(checkForBlankString(''));
 // console.log(checkForBlankString('hello'));
+
+
+
+//**************************************************************
+//Extract a specific number of characters from a string
+//input = ("Robin Singh",4)
+//output = "Robi"
+
+function extract (inputStr, num) {
+    var answer = '';
+    for (var i=0; i<num; i++) {
+        answer = answer + inputStr[i];
+    }    
+    return answer;
+}
+console.log(extract("Robin Singh",4));
 </script>
 </head>
 <body>
