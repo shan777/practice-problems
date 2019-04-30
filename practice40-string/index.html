@@ -118,8 +118,31 @@ function abbreviate (name) {
     }    
     return answer;
 }
-console.log(abbreviate("Robin Singh"));
+// console.log(abbreviate("Robin Singh"));
 
+
+
+//**************************************************************
+//hide email addresses to protect from unauthorized user
+//input = "robin_singh@example.com"
+//output = "robin...@example.com"
+
+function protectEmail (email) {
+    var answer = '';
+    var underscoreIndex = email.indexOf('_');
+    var atIndex = email.indexOf('@');
+    for (var i=0; i<underscoreIndex; i++) {
+        answer = answer + email.charAt(i);
+    }
+    answer = answer + '...';
+    
+    for (var i=atIndex; i<email.length; i++) {
+        answer = answer + email.charAt(i);
+    }
+    
+    return answer;
+}
+console.log(protectEmail("Robin_Singh@email.com"));
 
 
 </script>
