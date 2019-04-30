@@ -2,6 +2,7 @@
 <html>
 <head>
     <script>
+//**************************************************************
 //combine two strings and order in ascending order
 //arrayA = [1, 4, 23, 2, 11];
 //arrayB = [50, 100, 5, 29];
@@ -14,11 +15,33 @@
             return a-b;
         });
         console.log(answerAry);
-        
-       
     }
+// console.log(combineThenOrder([1, 4, 23, 2, 11], [50, 100, 5, 29] ));
 
-console.log(combineThenOrder([1, 4, 23, 2, 11], [50, 100, 5, 29] ));
+
+
+
+//**************************************************************
+//split a string and convert it into an array of words
+//question = "Robin Williams";
+//answer = ["Robin", "Williams"];
+
+function splitString (qStr) {
+    var word = '';
+    var answerAry = [];
+    for (var i=0; i<qStr.length; i++){
+        if(i==qStr.length-1 || qStr.charAt(i) === ' '){
+            answerAry.push(word);
+            word = '';
+        } else if(qStr.charAt(i) !== ' ') {
+            word = word + qStr[i];
+        }  
+    }
+    console.log(answerAry);        
+}
+
+// console.log(splitString("Robin Williams"));
+
 
 </script>
 </head>
