@@ -43,6 +43,46 @@ function splitString (qStr) {
 // console.log(splitString("Robin Williams"));
 
 
+
+
+//**************************************************************
+//check if the input is a string or not
+//input1 = "hello";
+//input2 = [1, 2, 4];
+//answer for input1 = true
+//answer for input1 = false
+
+
+function checkForString (input) {
+    if(typeof(input) === 'string') {
+        return true;
+    } else {
+        return false;
+    }
+}
+//  console.log(checkForString('hello'));
+//  console.log(checkForString([1, 2, 4]));
+
+
+
+
+//**************************************************************
+//check if the input is a blank string or not
+//input1 = "";
+//input2 = "hello";
+//answer for input1 = true
+//answer for input1 = false
+
+
+function checkForBlankString (input) {
+    if(input === '') {
+        return true;
+    } else {
+        return false;
+    }        
+}
+// console.log(checkForBlankString(''));
+// console.log(checkForBlankString('hello'));
 </script>
 </head>
 <body>
