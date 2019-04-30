@@ -2,6 +2,7 @@
 <html>
 <head>
     <script>
+//**************************************************************
 //combine two strings and order in ascending order
 //arrayA = [1, 4, 23, 2, 11];
 //arrayB = [50, 100, 5, 29];
@@ -14,11 +15,135 @@
             return a-b;
         });
         console.log(answerAry);
-        
-       
     }
+// console.log(combineThenOrder([1, 4, 23, 2, 11], [50, 100, 5, 29] ));
 
-console.log(combineThenOrder([1, 4, 23, 2, 11], [50, 100, 5, 29] ));
+
+
+
+//**************************************************************
+//split a string and convert it into an array of words
+//question = "Robin Williams";
+//answer = ["Robin", "Williams"];
+
+function splitString (qStr) {
+    var word = '';
+    var answerAry = [];
+    for (var i=0; i<qStr.length; i++){
+        if(i==qStr.length-1 || qStr.charAt(i) === ' '){
+            answerAry.push(word);
+            word = '';
+        } else if(qStr.charAt(i) !== ' ') {
+            word = word + qStr[i];
+        }  
+    }
+    console.log(answerAry);        
+}
+
+// console.log(splitString("Robin Williams"));
+
+
+
+
+//**************************************************************
+//check if the input is a string or not
+//input1 = "hello";
+//input2 = [1, 2, 4];
+//answer for input1 = true
+//answer for input1 = false
+
+
+function checkForString (input) {
+    if(typeof(input) === 'string') {
+        return true;
+    } else {
+        return false;
+    }
+}
+//  console.log(checkForString('hello'));
+//  console.log(checkForString([1, 2, 4]));
+
+
+
+
+//**************************************************************
+//check if the input is a blank string or not
+//input1 = "";
+//input2 = "hello";
+//answer for input1 = true
+//answer for input1 = false
+
+
+function checkForBlankString (input) {
+    if(input === '') {
+        return true;
+    } else {
+        return false;
+    }        
+}
+// console.log(checkForBlankString(''));
+// console.log(checkForBlankString('hello'));
+
+
+
+//**************************************************************
+//Extract a specific number of characters from a string
+//input = ("Robin Singh",4)
+//output = "Robi"
+
+function extract (inputStr, num) {
+    var answer = '';
+    for (var i=0; i<num; i++) {
+        answer = answer + inputStr[i];
+    }    
+    return answer;
+}
+//console.log(extract("Robin Singh",4));
+
+
+//**************************************************************
+//conver a string in abbreviated form
+//input = "Robin Williams"
+//output = "Robin S."
+
+function abbreviate (name) {
+    var answer = '';
+    for (var i=0; i<name.length; i++) {
+        if(name[i] !== ' '){
+            answer = answer + name[i];
+        } else { //when it's a space
+            answer = answer + ' ' + name[i+1] + '.';
+            break;
+        }
+    }    
+    return answer;
+}
+// console.log(abbreviate("Robin Singh"));
+
+
+
+//**************************************************************
+//hide email addresses to protect from unauthorized user
+//input = "robin_singh@example.com"
+//output = "robin...@example.com"
+
+function protectEmail (email) {
+    var answer = '';
+    var underscoreIndex = email.indexOf('_');
+    var atIndex = email.indexOf('@');
+    for (var i=0; i<underscoreIndex; i++) {
+        answer = answer + email.charAt(i);
+    }
+    answer = answer + '...';
+    
+    for (var i=atIndex; i<email.length; i++) {
+        answer = answer + email.charAt(i);
+    }
+    
+    return answer;
+}
+console.log(protectEmail("Robin_Singh@email.com"));
+
 
 </script>
 </head>
