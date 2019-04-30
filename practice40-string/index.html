@@ -98,7 +98,30 @@ function extract (inputStr, num) {
     }    
     return answer;
 }
-console.log(extract("Robin Singh",4));
+//console.log(extract("Robin Singh",4));
+
+
+//**************************************************************
+//conver a string in abbreviated form
+//input = "Robin Williams"
+//output = "Robin S."
+
+function abbreviate (name) {
+    var answer = '';
+    for (var i=0; i<name.length; i++) {
+        if(name[i] !== ' '){
+            answer = answer + name[i];
+        } else { //when it's a space
+            answer = answer + ' ' + name[i+1] + '.';
+            break;
+        }
+    }    
+    return answer;
+}
+console.log(abbreviate("Robin Singh"));
+
+
+
 </script>
 </head>
 <body>
