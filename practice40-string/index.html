@@ -138,12 +138,49 @@ function protectEmail (email) {
     
     for (var i=atIndex; i<email.length; i++) {
         answer = answer + email.charAt(i);
-    }
-    
+    }    
     return answer;
 }
-console.log(protectEmail("Robin_Singh@email.com"));
+// console.log(protectEmail("Rob_Singh@email.com"));
 
+
+
+
+
+
+function diagonalSum (ary) {
+    var leftToRightSum = 0, rightToLeftSum = 0;
+    var x=ary[0]* ary[0];
+    for (var i = 0, j=ary[0]; i < x; i=i+ary[0]+1, j=j+ary[0]-1) {
+        leftToRightSum += ary[i + 1]; 
+        console.log('left:', ary[i + 1])
+        rightToLeftSum += ary[j];
+        console.log('right:', ary[j]);
+
+    }
+    return Math.abs(leftToRightSum - rightToLeftSum);
+}
+
+// console.log(diagonalSum([3,11, 2, 4,4, 5, 6,10 ,8 ,-12]));
+// console.log(diagonalSum([4, - 1, 1, - 7, - 8, - 10, -8, - 5, - 2, 0, 9, 7, -1, 4, 4, - 2, 1]));
+// console.log(diagonalSum([9,
+// 6, 6, 7, -10, 9, -3, 8, 9, -1,
+// 9, 7 ,-10, 6, 4, 1, 6, 1, 1,
+// -1, -2, 4, -6, 1, -4, -6, 3, 9,
+// -8, 7, 6, -1 ,-6 ,-6 ,6 ,-7, 2,
+// -10, -4, 9, 1, -7, 8, -5, 3, -5,
+// -8 ,-3 ,-4 ,2 ,-3, 7 ,-5, 1 ,-5,
+// -2 ,-7, -4, 8, 3, -1, 8, 2, 3,
+// -3 ,4 ,6 ,-7, -7 ,-8 ,-3 ,9 ,-6,
+// -2 ,0, 5, 4, 4 ,4 ,-3, 3, 0]));
+
+// console.log(diagonalSum([3,
+// 1, 1 ,1,
+// 1, 1 ,1,
+// 1, 1 ,1]));
+
+
+ 
 
 </script>
 </head>
