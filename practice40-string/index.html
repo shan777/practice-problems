@@ -227,7 +227,12 @@ function string_parameterize (str) {
     var newStr = str.replace(/ /g, '-'); //replace all space with '-'
 
     //alternative below:
-    var anotherNewStr = str.split(' ').join('-');
+    //string.split(separator, limit) -- separator and limit both optional, split a string into an array of substrings 
+    //       and returns new array
+    //str.split(' ') ==> returns [Rob, Singh, from, USA.]
+    //array.join(separator) -- separator is optional, if omitted, separated w/ a comma, returns a string
+    //[Rob, Singh, from, USA.].join('-') ===> returns a string 'Rob-singh-from-USA.'
+     var anotherNewStr = str.split(' ').join('-');
     //console.log(anotherNewStr.toLowerCase());
 
     //my stupid way @_@;;
