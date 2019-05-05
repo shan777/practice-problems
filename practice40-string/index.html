@@ -253,7 +253,9 @@ function string_parameterize (str) {
 
 function capitalize (str) {
  
-    console.log(str.charAt(0).toUpperCase() + str.slice(1, str.length));
+    console.log(str.charAt(0).toUpperCase() + str.slice(1, str.length)); //no need str.length!!!!!!!!!!!
+    console.log(str.charAt(0).toUpperCase() + str.slice(1)); //end is optional
+
 }
 
 capitalize('hello there');
