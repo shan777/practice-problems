@@ -179,8 +179,73 @@ function diagonalSum (ary) {
 // 1, 1 ,1,
 // 1, 1 ,1]));
 
-
+// console.log(diagonalSum([2,
+// 6, 8,
+// -6, 9]));
  
+
+
+
+
+function mergeArrays(a, b) {
+    var mergedAndSortedArray = [];
+    for (var i = 0, j=0, counter=0 ;  counter < a.length+b.length ;){
+        if (a[i] <= b[j]) {
+            mergedAndSortedArray.push(a[i]);
+            i++;
+        } else {
+            mergedAndSortedArray.push(b[j]);
+            j++;
+        }
+        counter++;
+        if(i=== a.length) {
+            for (var m=j; m < b.length; m++){
+                mergedAndSortedArray.push(b[m]);
+            }
+            break;
+        }else if(j===b.length){
+            for (var k=i; k < a.length; k++){
+                mergedAndSortedArray.push(a[k]);
+            }
+            break;
+        }
+    }
+    return mergedAndSortedArray;
+}
+
+var a = [1, 5, 7 ,7],
+    b= [0, 1, 2, 3];
+// console.log(mergeArrays(a,b));
+
+
+
+
+
+//input: "Rob Singh from USA."
+//output: "rob-singh-from-usa"
+function string_parameterize (str) {
+    var newStr = str.replace(/ /g, '-'); //replace all space with '-'
+
+    //alternative below:
+    var anotherNewStr = str.split(' ').join('-');
+    //console.log(anotherNewStr.toLowerCase());
+
+    //my stupid way @_@;;
+    // console.log(str.charAt(0));
+    // for (var i=0; i<str.length; i++) {
+    //     if(str.charAt(i) === ' '){ // if it's a space
+    //     console.log('charAt =>', str.charAt(i));
+    //         str.replace(str.charAt(i), '-');
+    //         console.log(str.charAt(i));
+    //     }
+    // }
+    newStr = newStr.replace(/\./g, '');
+    return newStr.toLowerCase();
+}
+
+console.log(string_parameterize("Rob Singh from USA."));
+
+
 
 </script>
 </head>
