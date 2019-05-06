@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style type="text/css">
+    #wrap {color: blue;}
+    #test {color: green !important;}
+    p {color: purple !important;}
+    div#nav {font-size: 4rem;} /*combined selector*/
+    #nav{font-size: 0.5rem;} /*id selector*/
+
+        #pp::before {content: url(https://gph.is/2anmdUU);}
+        #pp::first-letter {color: rgb(18, 31, 171); font-size: xx-large; font-variant: small-caps}
+    </style>
+
+
     <script>
 //**************************************************************
 //combine two strings and order in ascending order
@@ -255,7 +267,6 @@ function string_parameterize (str) {
 
 
 //caiptalize first letter of the string
-
 function capitalize (str) {
  
     console.log(str.charAt(0).toUpperCase() + str.slice(1, str.length)); //no need str.length!!!!!!!!!!!
@@ -263,13 +274,32 @@ function capitalize (str) {
 
 }
 
-capitalize('hello there');
+//capitalize('hello there');
+
+
+
+
+
+
 
 
 
 </script>
 </head>
 <body>
+    <!-- testing the CSS specificity -->
+    <p id="wrap" style="color:red;">hello</p>
+    <div>
+        <p id="test" style="color: orange;">test</p>
+    </div>
+    <p style="color: peachpuff;">just a paragraph</p>
+
+    <div>
+        <div id="nav">navnav nav</div>
+    </div>
+
+    <div> before </div>
+    <p id="pp">google</p>
 
 </body>
 </html>
