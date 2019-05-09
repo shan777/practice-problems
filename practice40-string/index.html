@@ -157,6 +157,7 @@ function protectEmail (email) {
 
 
 
+//**********************************************
 
 
 
@@ -196,7 +197,7 @@ function diagonalSum (ary) {
 // -6, 9]));
  
 
-
+//**********************************************
 
 
 function mergeArrays(a, b) {
@@ -230,6 +231,7 @@ var a = [1, 5, 7 ,7],
 // console.log(mergeArrays(a,b));
 
 
+//**********************************************
 
 
 
@@ -264,9 +266,12 @@ function string_parameterize (str) {
 
 
 
+//**********************************************
 
 
 //caiptalize first letter of the string
+//input: 'hello there'
+//output: 'Hello there'
 function capitalize (str) {
  
     console.log(str.charAt(0).toUpperCase() + str.slice(1, str.length)); //no need str.length!!!!!!!!!!!
@@ -278,10 +283,60 @@ function capitalize (str) {
 
 
 
+//**********************************************
+
+//practicing closure
+function outer() {
+    var count = 1;
+    return function(cnt) {
+        count += cnt;
+        console.log(count);
+    }
+}
+
+/*var func = outer();
+func(10); //  11
+func(10); //  21
+func(10); //  31
+*/
+
+
+//**********************************************
+//swap cases
+//input: 'AaBbCcDd'
+//output: 'aAbBcCdD'
+
+function swapcase(str) {
+    let newStr = '', ltr;
+    for (let i=0; i<str.length; i++) {
+        ltr = str.charAt(i);
+        if (ltr == ltr.toUpperCase()) { //if it's the uppercase
+            newStr = newStr + str.charAt(i).toLowerCase();
+        }else { //lowercase
+            newStr = newStr + str.charAt(i).toUpperCase();
+        }
+    }
+    console.log(newStr);
+}
+
+swapcase('AaBbCcDd');
+
+
+//**********************************************
+
+
+
+//**********************************************
 
 
 
 
+//**********************************************
+
+
+
+
+//**********************************************
 
 
 </script>
@@ -295,7 +350,7 @@ function capitalize (str) {
     <p style="color: peachpuff;">just a paragraph</p>
 
     <div>
-        <div id="nav">navnav nav</div>
+        <div id="nav">nav nav nav</div>
     </div>
 
     <div> before </div>
