@@ -319,13 +319,40 @@ function swapcase(str) {
     console.log(newStr);
 }
 
-swapcase('AaBbCcDd');
+//swapcase('AaBbCcDd');
 
 
 //**********************************************
+//Camelize a string
+/*
+input: 
+console.log(camelize("JavaScript Exercises")); 
+console.log(camelize("JavaScript exercises")); 
+console.log(camelize("JavaScriptExercises"));
+output:
+"JavaScriptExercises" 
+"JavaScriptExercises" 
+"JavaScriptExercises"
+*/
 
+function camelize (str) {
+    var nextChar = '',
+        newStr = '';
+    for (var i=0; i<str.length; i++) {        
+        if(str.charAt(i) === ' ') {
+            nextChar = str.charAt(i+1).toUpperCase();
+            newStr = newStr + nextChar;
+            i++;
+        } else {
+            newStr = newStr + str.charAt(i);
+        }
+    }
+    console.log(newStr);
+}
 
-
+camelize("JavaScript Exercises");
+camelize("JavaScript exercises"); 
+camelize("JavaScriptExercises");
 //**********************************************
 
 
