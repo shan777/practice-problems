@@ -350,13 +350,48 @@ function camelize (str) {
     console.log(newStr);
 }
 
-camelize("JavaScript Exercises");
-camelize("JavaScript exercises"); 
-camelize("JavaScriptExercises");
+//camelize("JavaScript Exercises");
+//camelize("JavaScript exercises"); 
+//camelize("JavaScriptExercises");
+
 //**********************************************
+/*uncamelize a string
+input:
+console.log(uncamelize('helloWorld')); 
+console.log(uncamelize('helloWorld','-')); 
+console.log(uncamelize('helloWorld','_'));
+output:
+"hello world" 
+"hello-world" 
+"hello_world"
+*/
+
+function uncamelize (str, sth) {
+    var newStr = '';
+    for (var i=0; i<str.length; i++) {
+        if(str.charAt(i) === str.charAt(i).toUpperCase()) {
+            if(sth === undefined) {        
+                newStr = newStr + ' ' + str.charAt(i).toLowerCase();
+            } else if (sth === '-') {      
+                newStr = newStr + '-' + str.charAt(i).toLowerCase();
+            } else if (sth === '_') {      
+            newStr = newStr + '_' + str.charAt(i).toLowerCase();
+            }
+        } else {
+            newStr = newStr + str.charAt(i);
+        }
+    }
+    console.log(newStr);
+
+    
 
 
+    
+}
 
+uncamelize('helloWorld'); 
+uncamelize('helloWorld','-');
+uncamelize('helloWorld','_');
 
 //**********************************************
 
