@@ -366,15 +366,15 @@ output:
 "hello_world"
 */
 
-function uncamelize (str, sth) {
+function uncamelize (str, separator) {
     var newStr = '';
     for (var i=0; i<str.length; i++) {
         if(str.charAt(i) === str.charAt(i).toUpperCase()) {
-            if(sth === undefined) {        
+            if(separator === undefined) {        
                 newStr = newStr + ' ' + str.charAt(i).toLowerCase();
-            } else if (sth === '-') {      
+            } else if (separator === '-') {      
                 newStr = newStr + '-' + str.charAt(i).toLowerCase();
-            } else if (sth === '_') {      
+            } else if (separator === '_') {      
             newStr = newStr + '_' + str.charAt(i).toLowerCase();
             }
         } else {
@@ -382,21 +382,30 @@ function uncamelize (str, sth) {
         }
     }
     console.log(newStr);
-
-    
-
-
-    
 }
 
-uncamelize('helloWorld'); 
-uncamelize('helloWorld','-');
-uncamelize('helloWorld','_');
+//uncamelize('helloWorld'); 
+//uncamelize('helloWorld','-');
+//uncamelize('helloWorld','_');
 
 //**********************************************
+function uncamelize2 (str, separator) {
+    var newStr = '';
+    if(separator == undefined) { 
+        newStr = str.replace(/[A-Z]/g, function (letter) {
+            return ' ' + letter.toLowerCase();
+        });
+    } else {
+        newStr = str.replace(/[A-Z]/g, function (letter) {
+            return separator + letter.toLowerCase();
+        });
+    }
+    console.log(newStr);
+}
 
-
-
+uncamelize2('helloWorld'); 
+uncamelize2('helloWorld','-');
+uncamelize2('helloWorld','_');
 
 //**********************************************
 
