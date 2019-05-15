@@ -507,8 +507,8 @@ humanize_format(402);
 
 function humanize_format2(num) {
     var result = '';
-
     var numMod = num%10;
+
     if(num !== undefined) {
         if (numMod === 1) {
             result = num + 'st';
@@ -522,14 +522,39 @@ function humanize_format2(num) {
     } 
     console.log(result);
 }
-
+/*
 humanize_format2();
 humanize_format2(1);
 humanize_format2(8);
 humanize_format2(301);
 humanize_format2(402);
-//**********************************************
+*/
 
+//**********************************************
+function humanize_format3(num) {
+    var result = '';
+
+    if(num !== undefined) {
+        switch(num%10) {
+            case 1:
+                return num + 'st';                
+            case 2:
+                return num + 'nd';
+            case 3:
+                return num + 'rd';
+            default:
+                return num + 'th';        
+        } 
+    } 
+    return result;
+    
+}
+
+console.log(humanize_format3());  
+console.log(humanize_format3(1));  
+console.log(humanize_format3(8));  
+console.log(humanize_format3(301));  
+console.log(humanize_format3(402)); 
 
 
 //**********************************************
