@@ -480,7 +480,6 @@ console.log(humanize_format(402));
 function humanize_format(num) {
     var result = '';
 
-
     if(num !== undefined) {
         var numToStr = num.toString();
         var lastDigitToCheck = numToStr.charAt(numToStr.length-1);
@@ -493,18 +492,42 @@ function humanize_format(num) {
         } else {
             result = num + 'th';
         }
-    } else {
-        result = '';
-    }
-
+    } 
     console.log(result);
 }
+
+/*
 humanize_format();
 humanize_format(1);
 humanize_format(8);
 humanize_format(301);
 humanize_format(402);
+*/
 
+
+function humanize_format2(num) {
+    var result = '';
+
+    var numMod = num%10;
+    if(num !== undefined) {
+        if (numMod === 1) {
+            result = num + 'st';
+        } else if(numMod === 2) {
+            result = num + 'nd';
+        } else if(numMod === 3) {
+            result = num + 'rd';
+        } else {
+            result = num + 'th';
+        }
+    } 
+    console.log(result);
+}
+
+humanize_format2();
+humanize_format2(1);
+humanize_format2(8);
+humanize_format2(301);
+humanize_format2(402);
 //**********************************************
 
 
