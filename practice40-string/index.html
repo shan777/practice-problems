@@ -507,7 +507,7 @@ humanize_format(402);
 
 function humanize_format2(num) {
     var result = '';
-    var numMod = num%10;
+    var numMod = num % 10;
 
     if(num !== undefined) {
         if (numMod === 1) {
@@ -535,7 +535,7 @@ function humanize_format3(num) {
     var result = '';
 
     if(num !== undefined) {
-        switch(num%10) {
+        switch(num % 10) {
             case 1:
                 return num + 'st';                
             case 2:
