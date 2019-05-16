@@ -601,12 +601,21 @@ console.log(string_chop('w3resource',3));
 ["w3", "re", "so", "ur", "ce"] 
 ["w3r", "eso", "urc", "e"]
 */
-function string_chop(str, num) {
+function string_chop(str, size) {
     var strAry = [];
-    if(num) {
-        for (var i=0; i<str.length; i+num) {
-            strAry.push(str.substr(i, num));
+    if(size) {
+        var aryIndex = 0, 
+            k = 0;
+        var aryLength = str.length/size;
+        if(aryLength > 0) {
+            aryLength = Math.ceil(aryLength);
         }
+    
+        while(aryIndex < aryLength) {
+            strAry.push(str.substr(k, size));
+            aryIndex++;
+            k = k + size;
+        }        
     } else {
         strAry.push(str);
     }
