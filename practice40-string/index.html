@@ -549,21 +549,83 @@ function humanize_format3(num) {
     return result;
     
 }
-
+/*
 console.log(humanize_format3());  
 console.log(humanize_format3(1));  
 console.log(humanize_format3(8));  
 console.log(humanize_format3(301));  
 console.log(humanize_format3(402)); 
+*/
+
+
 
 
 //**********************************************
+/*Write a JavaScript function to truncates a string if it is longer than the specified number of characters. Truncated strings will end with a translatable ellipsis sequence ("…") (by default) or specified characters.
+Test Data :
+console.log(text_truncate('We are doing JS string exercises.')) 
+console.log(text_truncate('We are doing JS string exercises.',19))
+console.log(text_truncate('We are doing JS string exercises.',15,'!!'))
+"We are doing JS string exercises." 
+"We are doing JS ..." 
+"We are doing !!"
+*/
+
+function text_truncate(str, num, endP) {
+    if(!num) {
+        return str;
+    }else if(str.length > num) {
+        if(!endP) {
+            return (str.slice(0, num)) + '...';
+        }else {
+            return (str.substring(0, num)) + endP;
+        }
+    }
+}
+/*
+console.log(text_truncate('We are doing JS string exercises.')); 
+console.log(text_truncate('We are doing JS string exercises.',19));
+console.log(text_truncate('We are doing JS string exercises.',15,'!!'));
+*/
+
+
 
 
 //**********************************************
+/*Write a JavaScript function to chop a string into chunks of a given length.
+Test Data :
+console.log(string_chop('w3resource')); 
+console.log(string_chop('w3resource',2)); 
+console.log(string_chop('w3resource',3));
+["w3resource"] 
+["w3", "re", "so", "ur", "ce"] 
+["w3r", "eso", "urc", "e"]
+*/
+function string_chop(str, num) {
+    var strAry = [];
+    if(num) {
+        for (var i=0; i<str.length; i+num) {
+            strAry.push(str.substr(i, num));
+        }
+    } else {
+        strAry.push(str);
+    }
+    return strAry;
+}
+
+console.log(string_chop('w3resource')); 
+console.log(string_chop('w3resource',2)); 
+console.log(string_chop('w3resource',3));
 
 
-
+//**********************************************
+//**********************************************
+//**********************************************
+//**********************************************
+//**********************************************
+//**********************************************
+//**********************************************
+//**********************************************
 //**********************************************
 </script>
 </head>
