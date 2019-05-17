@@ -638,13 +638,13 @@ Output :
 1
 */
 function count(str, matchStr) {
-    // var re = new RegExp(matchStr, "g");
-    // var res = str.match(re);
-    var res = str.split(matchStr);
-    console.log(res.length);
+    var res = (str.toUpperCase()).split(matchStr.toUpperCase());
+    console.log(res.length-1);
 }
 
 count("The quick brown fox jumps over the lazy dog", 'the');
+count("The quick brown fox jumps over the lazy dog", 'fox');
+count("hello, hello, hello, hello, hi, how are you?", 'hello');
 //**********************************************
 //**********************************************
 //**********************************************
