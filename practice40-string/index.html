@@ -641,11 +641,39 @@ function count(str, matchStr) {
     var res = (str.toUpperCase()).split(matchStr.toUpperCase());
     console.log(res.length-1);
 }
-
+/*
 count("The quick brown fox jumps over the lazy dog", 'the');
 count("The quick brown fox jumps over the lazy dog", 'fox');
 count("hello, hello, hello, hello, hi, how are you?", 'hello');
+*/
+
+
+
+
+
 //**********************************************
+/*Write a JavaScript function to repeat a string a specified times.
+Test Data :
+console.log(repeat_string('a', 4)); 
+console.log(repeat_string('a'));
+Output : 
+"aaaa" 
+"Error in string or count."*/
+function repeat_string(str, count) {
+    if(count === undefined || str === undefined) {
+        return "Error in string or count";
+    } else {
+        return str.repeat(count);
+    }
+}
+
+console.log(repeat_string('a', 4)); 
+console.log(repeat_string('a'));
+
+
+
+
+
 //**********************************************
 //**********************************************
 //**********************************************
@@ -655,6 +683,11 @@ count("hello, hello, hello, hello, hi, how are you?", 'hello');
 //**********************************************
 </script>
 </head>
+
+
+
+
+
 <body>
     <!-- testing the CSS specificity -->
     <p id="wrap" style="color:red;">hello</p>
