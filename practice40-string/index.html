@@ -716,11 +716,28 @@ function truncate (str, num) {
     }
 
 }
+/*
 console.log(truncate('The quick brown fox jumps over the lazy dog', 4));
-
+*/
 
 
 //**********************************************
+/*Write a JavaScript function to alphabetize a given string. Go to the editor
+Alphabetize string : An individual string can be alphabetized. This rearranges the letters so they are sorted A to Z.
+Test Data :
+console.log(alphabetize_string('United States'));
+Output : 
+"SUadeeinsttt"
+*/
+function alphabetize_string(str) {
+    var sortedAry = (str.split('')).sort(); //string into the array and sort the array
+    return sortedAry.join(''); //convert array back to the string
+}
+
+console.log(alphabetize_string('United States'));
+
+
+
 //**********************************************
 //**********************************************
 //**********************************************
