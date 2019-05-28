@@ -734,11 +734,28 @@ function alphabetize_string(str) {
     return sortedAry.join(''); //convert array back to the string
 }
 
-console.log(alphabetize_string('United States'));
+//console.log(alphabetize_string('United States'));
 
 
 
 //**********************************************
+/*Write a JavaScript function to remove the first occurrence of a given 'search string' from a string. 
+Test Data :
+console.log(remove_first_occurrence("The quick brown fox jumps over the lazy dog", 'the'));
+Output : 
+"The quick brown fox jumps over lazy dog"
+*/
+function remove_first_occurrence(str, removeStr) {
+    var strIntoAry = str.split(' '); //split the array and put words in the array
+    var indexOfRemoveStrInAry = strIntoAry.indexOf(removeStr); //finds index of where the removeStr is in the array
+    strIntoAry.splice(indexOfRemoveStrInAry, 1); //remove one from the indexOfRemoveStrInAry
+    return strIntoAry.join(' '); //join the array elements with a space between them
+}
+
+console.log(remove_first_occurrence("The quick brown fox jumps over the lazy dog", 'the'));
+
+
+
 //**********************************************
 //**********************************************
 //**********************************************
