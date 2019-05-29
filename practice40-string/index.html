@@ -733,7 +733,7 @@ function alphabetize_string(str) {
     var sortedAry = (str.split('')).sort(); //string into the array and sort the array
     return sortedAry.join(''); //convert array back to the string
 }
-
+/*
 //console.log(alphabetize_string('United States'));
 
 
@@ -752,12 +752,61 @@ function remove_first_occurrence(str, removeStr) {
     return strIntoAry.join(' '); //join the array elements with a space between them
 }
 
-console.log(remove_first_occurrence("The quick brown fox jumps over the lazy dog", 'the'));
+//console.log(remove_first_occurrence("The quick brown fox jumps over the lazy dog", 'the'));
 
 
+
+//**********************************************   closure
+/*function secret(secretCode) {
+    return {
+        saySecretCode() {
+            console.log(secretCode);
+        }
+    }
+}
+
+const theSecret = secret('777B');
+theSecret.saySecretCode();
+*/
 
 //**********************************************
-//**********************************************
+/*Write a JavaScript function to find a word within a string.
+Test Data :
+console.log(search_word('The quick brown fox', 'fox')); 
+console.log(search_word('aa, bb, cc, dd, aa', 'aa'));
+Output : 
+"'fox' was found 1 times." 
+"'aa' was found 2 times."
+*/
+function search_word(str, word) {
+    var count = 0;
+    if(str.search(word) < 0) { //if the word is not there, returns -1
+        return 0;
+    }
+
+    var str2 = str;
+    for (var i=0; i<str2.length-word.length; ) {
+        if(str2.includes(word, 0)) {
+            count++;
+            i = str2.indexOf(word)+word.length;
+            if(i < str.length) {
+                str2 = str.substring(i+word.length, str.length);
+            }else {
+                return count;
+            }
+        }else {
+            return count;
+        }
+    }
+    return count;
+}
+
+console.log(search_word('The quick brown fox', 'a')); 
+console.log(search_word('The quick brown fox', 'fox')); 
+console.log(search_word('aa, bb, cc, dd, aa', 'aa'));
+// console.log(search_word('aa, bb, cc, dd, aa, bb, bb, bb, bb, bb bb bb bb', 'bb'));
+
+
 //**********************************************
 </script>
 </head>
