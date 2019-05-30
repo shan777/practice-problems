@@ -778,33 +778,53 @@ Output :
 "'fox' was found 1 times." 
 "'aa' was found 2 times."
 */
-function search_word(str, word) {
+function search_word(text, word) {
     var count = 0;
-    if(str.search(word) < 0) { //if the word is not there, returns -1
-        return 0;
-    }
 
-    var str2 = str;
-    for (var i=0; i<str2.length-word.length; ) {
-        if(str2.includes(word, 0)) {
-            count++;
-            i = str2.indexOf(word)+word.length;
-            if(i < str.length) {
-                str2 = str.substring(i+word.length, str.length);
-            }else {
-                return count;
+    var y=0;
+    if(text.search(word) < 0) { //if the word is not there, returns -1
+        count = 0;
+    }
+    
+
+    for (i=0;i< text.length;i++) {
+        if(text[i] == word[0]) {
+            for(j=i;j< i+word.length;j++) {
+                if(text[j]==word[j-i]) {
+                    y++;
+                }
+                if (y==word.length){
+                    count++;
+                }
             }
-        }else {
-            return count;
+            y=0;
         }
     }
-    return count;
+   return "'"+word+"' was found "+count+" times.";
+
+
+
+    // var str2 = str;
+    // for (var i=0; i<str.length-word.length; ) { //i < (33-3 = 30)
+    //     if(str2.includes(word, 0)) {
+    //         count++; //1 -> 2 -> 3
+    //         i = str2.indexOf(word) + word.length; //i = 4+3=7 -----> 12+3=15  -----> 0+3=3
+    //         if(i < str2.length) { 
+    //             str2 = str2.substring(i+1, str2.length); //str2 = index 8 up to 33: 'quick brown fox fox hello' -----> 16 to 33: 'fox hello' ----> 'hello'
+    //         }
+    //     }else {
+    //         break;
+    //     }
+    // }
+    // return count;
 }
 
 console.log(search_word('The quick brown fox', 'a')); 
 console.log(search_word('The quick brown fox', 'fox')); 
+console.log(search_word('I love you forever', 'ever')); 
+console.log(search_word('The qui brown quick fox', 'quick')); 
 console.log(search_word('aa, bb, cc, dd, aa', 'aa'));
-// console.log(search_word('aa, bb, cc, dd, aa, bb, bb, bb, bb, bb bb bb bb', 'bb'));
+console.log(search_word('The fox quick brown fox fox hello', 'fox')); 
 
 
 //**********************************************
