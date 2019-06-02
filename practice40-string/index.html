@@ -781,28 +781,16 @@ Output :
 function search_word(text, word) {
     var count = 0;
 
-    var y=0;
     if(text.search(word) < 0) { //if the word is not there, returns -1
         count = 0;
     }
     
-
-    
-  
-
-
-    // var str2 = str;
-    // for (var i=0; i<str.length-word.length; ) { //i < (33-3 = 30)
-    //     if(str2.includes(word, 0)) {
-    //         count++; //1 -> 2 -> 3
-    //         i = str2.indexOf(word) + word.length; //i = 4+3=7 -----> 12+3=15  -----> 0+3=3
-    //         if(i < str2.length) { 
-    //             str2 = str2.substring(i+1, str2.length); //str2 = index 8 up to 33: 'quick brown fox fox hello' -----> 16 to 33: 'fox hello' ----> 'hello'
-    //         }
-    //     }else {
-    //         break;
-    //     }
-    // }
+    var strIntoAry = text.split(/\W+/); // \W+ -> non-word characters
+    for (var i=0; i<strIntoAry.length; i++) {
+        if(strIntoAry[i] === word) {
+            count++;
+        }
+    }
 
     return "'"+word+"' was found "+count+" times.";
 
