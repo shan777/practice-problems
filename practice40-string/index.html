@@ -796,15 +796,40 @@ function search_word(text, word) {
 
 }
 
-console.log(search_word('The quick brown fox', 'a')); 
-console.log(search_word('The quick brown fox', 'fox')); 
-console.log(search_word('I love you forever', 'ever')); 
-console.log(search_word('The qui brown quick fox', 'quick')); 
-console.log(search_word('aa, bb, cc, dd, aa', 'aa'));
-console.log(search_word('The fox quick brown fox fox hello', 'fox')); 
+// console.log(search_word('The quick brown fox', 'a')); 
+// console.log(search_word('The quick brown fox', 'fox')); 
+// console.log(search_word('I love you forever', 'ever')); 
+// console.log(search_word('The qui brown quick fox', 'quick')); 
+// console.log(search_word('aa, bb, cc, dd, aa', 'aa'));
+// console.log(search_word('The fox quick brown fox fox hello', 'fox')); 
 
 
 //**********************************************
+/* Write a JavaScript function check if a string ends with specified suffix. 
+Test Data :
+console.log(string_endsWith('JS PHP PYTHON','PYTHON')); 
+true
+console.log(string_endsWith('JS PHP PYTHON',''));
+false
+*/
+function string_endsWith(str, end) {
+    var strIntoAry = str.split(' ');
+    if(strIntoAry[strIntoAry.length-1] === end) {
+        return true;
+    }else {
+        return false;
+    }
+}
+console.log(string_endsWith('JS PHP PYTHON','PYTHON')); 
+console.log(string_endsWith('JS PHP PYTHON',''));
+//**********************************************
+//**********************************************
+//**********************************************
+//**********************************************
+//**********************************************
+//**********************************************
+//**********************************************
+
 </script>
 </head>
 
