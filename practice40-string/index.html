@@ -859,10 +859,34 @@ for(var i=0; i<str.length; i++) {
     return newStr;
 }
 
-console.log(escape_html('PHP & MySQL')); 
-console.log(escape_html('3 > 2'));
+// console.log(escape_html('PHP & MySQL')); 
+// console.log(escape_html('3 > 2'));
+
+
+
+
 
 //**********************************************
+/*Write a JavaScript function to test case insensitive (except special Unicode characters) string comparison.
+Test Data :
+console.log(compare_strings('abcd', 'AbcD')); 
+true
+console.log(compare_strings('ABCD', 'Abce'));
+false
+*/
+function compare_strings(str1, str2) {
+    str1 = str1.toLowerCase();
+    str2 = str2.toLowerCase();
+    return (str1===str2);
+
+}
+
+console.log(compare_strings('abcd', 'AbcD')); 
+console.log(compare_strings('ABCD', 'Abce'));
+
+
+
+
 //**********************************************
 //**********************************************
 //**********************************************
