@@ -820,9 +820,48 @@ function string_endsWith(str, end) {
         return false;
     }
 }
-console.log(string_endsWith('JS PHP PYTHON','PYTHON')); 
+/*console.log(string_endsWith('JS PHP PYTHON','PYTHON')); 
 console.log(string_endsWith('JS PHP PYTHON',''));
+*/
+
+
+
+
 //**********************************************
+// Write a JavaScript function to escapes special characters (&, <, >, ', ") for use in HTML. 
+// Test Data :
+// console.log(escape_html('PHP & MySQL')); 
+// "PHP &amp; MySQL"
+// console.log(escape_html('3 > 2'));
+// "3 &gt; 2"
+
+function escape_html(str) {
+    var newStr;
+for(var i=0; i<str.length; i++) {
+        switch (str.charAt(i)) {
+            case '&': 
+                newStr = str.replace('&', '&amp;');
+                break;
+            case '<': 
+                newStr = str.replace('<', '&lt;');
+                break;
+            case '>': 
+                newStr = str.replace('>', '&gt;');
+                break;
+            case '"': 
+                newStr = str.replace('"', '&quot;');
+                break;
+            case "'": 
+                newStr = str.replace("'", '&#039;');
+                break;    
+        }
+    }
+    return newStr;
+}
+
+console.log(escape_html('PHP & MySQL')); 
+console.log(escape_html('3 > 2'));
+
 //**********************************************
 //**********************************************
 //**********************************************
