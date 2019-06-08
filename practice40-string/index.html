@@ -908,15 +908,27 @@ function case_insensitive_search(str, word) {
 
 }
 
-console.log(case_insensitive_search('Hello Amber', 'amber')); 
-console.log(case_insensitive_search('Hello Amber', 'Amberlyn')); 
-console.log(case_insensitive_search('Hello Amber', 'Amber')); 
-console.log(case_insensitive_search('JavaScript Exercises', 'exercises')); 
-console.log(case_insensitive_search('JavaScript Exercises', 'Exercises')); 
-console.log(case_insensitive_search('JavaScript Exercises', 'Exercisess')); 
+// console.log(case_insensitive_search('Hello Amber', 'amber')); 
+// console.log(case_insensitive_search('Hello Amber', 'Amberlyn')); 
+// console.log(case_insensitive_search('Hello Amber', 'Amber')); 
+// console.log(case_insensitive_search('JavaScript Exercises', 'exercises')); 
+// console.log(case_insensitive_search('JavaScript Exercises', 'Exercises')); 
+// console.log(case_insensitive_search('JavaScript Exercises', 'Exercisess')); 
 
 
 //**********************************************
+/*Write a JavaScript function to Uncapitalize? the first character of a string. 
+Test Data :
+console.log(Uncapitalize('Js string exercises'));
+"js string exercises"
+*/
+function Uncapitalize(str) {
+    var newStr = str.charAt(0).toLowerCase() + str.slice(1, str.length);
+    return newStr;
+}
+console.log(Uncapitalize('Js string exercises'));
+
+
 //**********************************************
 //**********************************************
 //**********************************************
