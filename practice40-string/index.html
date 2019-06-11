@@ -938,10 +938,34 @@ console.log(capitalizeWords('js string exercises'));
 function capitalizeWords(str) {
     return str.toUpperCase();
 }
-console.log(capitalizeWords('js string exercises'));
+
+// console.log(capitalizeWords('js string exercises'));
 
 
 //**********************************************
+/*
+Write a JavaScript function to test whether the character at the provided (character) index is upper case. 
+Test Data :
+console.log(isUpperCaseAt('Js STRING EXERCISES', 1));
+false
+*/
+function isUpperCaseAt(str, pos) {
+    var charToTest = str.charAt(pos);
+    if(charToTest === charToTest.toUpperCase()) {
+        return true;
+    }
+    else
+        return false;
+}
+
+
+console.log(isUpperCaseAt('Js STRING EXERCISES', 1));
+console.log(isUpperCaseAt('Js STRING EXERCISES', 0));
+
+
+
+
+
 //**********************************************
 
 </script>
