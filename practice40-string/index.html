@@ -942,6 +942,9 @@ function capitalizeWords(str) {
 // console.log(capitalizeWords('js string exercises'));
 
 
+
+
+
 //**********************************************
 /*
 Write a JavaScript function to test whether the character at the provided (character) index is upper case. 
@@ -958,15 +961,32 @@ function isUpperCaseAt(str, pos) {
         return false;
 }
 
-
-console.log(isUpperCaseAt('Js STRING EXERCISES', 1));
-console.log(isUpperCaseAt('Js STRING EXERCISES', 0));
+// console.log(isUpperCaseAt('Js STRING EXERCISES', 1));
+// console.log(isUpperCaseAt('Js STRING EXERCISES', 0));
 
 
 
 
 
 //**********************************************
+/*Write a JavaScript function to test whether a string starts with a specified string. 
+Test Data :
+console.log(startsWith('js string exercises', 'js'));
+true
+*/
+function startsWith(str, strStartingWith) {
+    var strToAry = str.split(' ');
+    if(strToAry[0] === strStartingWith)
+        return true;
+    else
+        return false;
+}
+
+console.log(startsWith('js string exercises', 'js'));
+
+
+
+
 
 </script>
 </head>
