@@ -982,11 +982,24 @@ function startsWith(str, strStartingWith) {
         return false;
 }
 
-console.log(startsWith('js string exercises', 'js'));
+// console.log(startsWith('js string exercises', 'js'));
 
 
+//**********************************************
+/*Write a JavaScript function to test whether a string ends with a specified string. 
+Test Data :
+console.log(endsWith('JS string exercises', 'exercises'));
+true
+*/
+function endsWith (str, strEndingWith) {
+    var strToAry = str.split(' ');
+    if(strToAry[strToAry.length-1] === strEndingWith)
+        return true;
+    else
+        return false;
+}
 
-
+console.log(endsWith('JS string exercises', 'exercises'));
 
 </script>
 </head>
