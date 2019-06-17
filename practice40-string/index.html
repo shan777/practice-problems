@@ -1029,16 +1029,19 @@ function successor(str) {
     var newStr = str;
     if(!isNaN(lastChar)){ //if it is a number
         if(lastChar === '9') {
-            newStr = str.slice(0, str.length-1) + '0'; //str.slice(a, b) => up to position b, NOT INCLUDING!
+            var addOneToSecondToLastChar = parseInt(str.charAt(str.length-2)) + 1;
+            newStr = str.slice(0, str.length-2) + addOneToSecondToLastChar + '0'; //str.slice(a, b) => up to position b, NOT INCLUDING!
             // newStr.charAt(str.length-2) = (parseInt(str.charAt(str.length-2)))++;
         } else {
-            console.log('else');
+            var addOneToLastChar = parseInt(str.charAt(str.length-1)) + 1;
+            newStr = str.slice(0, str.length-1) + addOneToLastChar;
         }
     }
     return newStr;
             
 }
 console.log(successor('1239'));
+console.log(successor('3456'));
 
 
 
