@@ -1026,16 +1026,10 @@ console.log(successor('3456'));
 */
 function successor(str) {
     var lastChar = str.charAt(str.length-1);
-    var newStr = str;
+    var newStr;
     if(!isNaN(lastChar)){ //if it is a number
-        if(lastChar === '9') {
-            var addOneToSecondToLastChar = parseInt(str.charAt(str.length-2)) + 1;
-            newStr = str.slice(0, str.length-2) + addOneToSecondToLastChar + '0'; //str.slice(a, b) => up to position b, NOT INCLUDING!
-            // newStr.charAt(str.length-2) = (parseInt(str.charAt(str.length-2)))++;
-        } else {
-            var addOneToLastChar = parseInt(str.charAt(str.length-1)) + 1;
-            newStr = str.slice(0, str.length-1) + addOneToLastChar;
-        }
+        newStr = parseInt(str) + 1;
+        
     }
     return newStr;
             
