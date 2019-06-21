@@ -1025,17 +1025,25 @@ console.log(successor('3456'));
 "3457"
 */
 function successor(str) {
-    var lastChar = str.charAt(str.length-1);
+    //var lastChar = str.charAt(str.length-1);
+
     var newStr;
-    if(!isNaN(lastChar)){ //if it is a number
+    if(!isNaN(str)){ //if str is a number
         newStr = parseInt(str) + 1;
         
+    } else {
+        var n = str.charCodeAt(str.length-1);
+        var nextChar = String.fromCharCode(n+1);
+        newStr = str.slice(0, str.length-1) + nextChar;
     }
+
     return newStr;
             
 }
 console.log(successor('1239'));
 console.log(successor('3456'));
+console.log(successor('abcd'));
+
 
 
 
