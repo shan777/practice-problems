@@ -1025,14 +1025,21 @@ console.log(successor('3456'));
 "3457"
 */
 function successor(str) {
-    var newStr;
+    var newStr, nextChar;
+    var n = str.charCodeAt(str.length-1);
+
     if(!isNaN(str)){ //if str is a number
         newStr = parseInt(str) + 1;
         
-    } else {
-        var n = str.charCodeAt(str.length-1);
-        var nextChar = String.fromCharCode(n+1);
-        newStr = str.slice(0, str.length-1) + nextChar;
+    } else if ((n>=65 && n<=90) || (n>=97 && n<=122)) {
+        if(n == 90) { //Z=90 (A=65, B=66, etc.)
+            n = 96; //a=97 (b=98, c=99, z=122, etc.)
+        }
+        nextChar = String.fromCharCode(n+1);
+        newStr = str.slice(0, str.length-1) + nextChar;    
+    }
+    else {
+            newStr = str;
     }
 
     return newStr;
@@ -1041,6 +1048,10 @@ function successor(str) {
 console.log(successor('1239'));
 console.log(successor('3456'));
 console.log(successor('abcd'));
+console.log(successor('ABC'));
+console.log(successor('ZZZ'));
+console.log(successor('< >'));
+
 
 
 
