@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+
+
+<script>
+/*
+Write a JavaScript function that reverse a number. 
+Example x = 32243;
+Expected Output : 34223 
+
+Negative numbers should remain negative.
+ex. -12345becomes -54321
+
+Any leading zeroes should be removed.
+ex. 321000 becomes 123 & not 000123
+
+The function can accept floats or integers.
+ex. 543.2100 becomes 12.345
+
+The function will return integers as integers.
+ex. 54321 becomes 12345 & not 12345.00
+*/
+function reverseNumber(num) { 
+    //solution: number to string then split, reverse, then join
+    var numToString = num.toString();
+    console.log('number to string:', numToString);
+    var newAry = numToString.split('');
+    var reversedAry = newAry.reverse();
+    var result = reversedAry.join('');
+    return result;
+
+    // return (((num.toString()).split('')).reverse()).join('');
+
+}
+
+console.log(reverseNumber(123));
+console.log(reverseNumber(-1234));
+console.log(reverseNumber(321000));
+console.log(reverseNumber(543.2100));
+
+
+
+
+
+
+</script>
+</head>
+</html>
