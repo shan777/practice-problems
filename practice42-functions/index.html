@@ -26,15 +26,25 @@ ex. 54321 becomes 12345 & not 12345.00
 */
 function reverseNumber(num) { 
     //solution: number to string then split, reverse, then join
-    var numToString = num.toString();
-    console.log('number to string:', numToString);
+    var numToString = num.toString();    
     var newAry = numToString.split('');
-    var reversedAry = newAry.reverse();
-    var result = reversedAry.join('');
+
+    if(numToString.includes('-')) {
+        newAry = newAry.slice(1, newAry.length);
+    }
+   
+    var reversedString = (newAry.reverse()).join('');
+    var result = reversedString;
+ 
+    if(numToString.includes('-')) {
+        result = '-' + reversedString;
+    }
+
+    if(result.charAt(0) === '0'){
+        result = parseInt(reversedString);        
+    }
+
     return result;
-
-    // return (((num.toString()).split('')).reverse()).join('');
-
 }
 
 console.log(reverseNumber(123));
