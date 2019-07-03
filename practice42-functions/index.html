@@ -60,13 +60,34 @@ A palindrome is word, phrase, or sequence that reads the same backward as forwar
 e.g., madam or nurses run.
 */
 function checkPalindrome(str) {
-    if(str.length % 2 == 0)
+    //remove any whitespace
+    var noSpaceStr = str.replace(/ /g, '');
+
+    if(noSpaceStr.length % 2 == 0 || noSpaceStr.length == 0) { //even number of characters or empty string
         return false;
+
+    } else if(noSpaceStr.length == 1) { //only one character
+        return true;    
+    
+    } else {
+        //change all to the same case (I will use lowercase)
+        var newStr = noSpaceStr.toLowerCase();
+        //put them in an array
+        var strToAry = newStr.split('');
+        // then compare first to the last, second to the second to the last, etc.
+        for(var i=0, j=noSpaceStr.length-1; i<parseInt(noSpaceStr.length/2); i++, j--) {
+            if(strToAry[i] != strToAry[j]) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
-
-
 console.log(checkPalindrome('hi'));
+console.log(checkPalindrome('Madam'));
+console.log(checkPalindrome('mom'));
+console.log(checkPalindrome('nurses run'));
 
 
 
