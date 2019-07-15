@@ -103,12 +103,30 @@ function inAlphabeticalOrder (str) {
     return strToAry.sort().join('');
 }
 
-console.log(inAlphabeticalOrder('webmaster'));
+// console.log(inAlphabeticalOrder('webmaster'));
+
+
 
 
 /*************************************************************************************************
-
+Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case.
+Example string : 'the quick brown fox' 
+Expected Output : 'The Quick Brown Fox '
 */
+function firstLtrToCapital (str) {
+    var answer = '';
+    var strToAry = str.split(' ');
+    for (var i=0; i<strToAry.length; i++) {
+        answer = answer + (strToAry[i].charAt(0).toUpperCase());  
+        for (var j=1; j<strToAry[i].length; j++) {
+            answer = answer + (strToAry[i].charAt(j));
+        }  
+        answer = answer + ' ';
+    }
+    return answer;
+}
+
+console.log(firstLtrToCapital('the quick brown fox'));
 
 
 
