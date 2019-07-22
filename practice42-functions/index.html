@@ -116,12 +116,13 @@ Expected Output : 'The Quick Brown Fox '
 function firstLtrToCapital (str) {
     var answer = '';
     var strToAry = str.split(' ');
+
     for (var i=0; i<strToAry.length; i++) {
         answer = answer + (strToAry[i].charAt(0).toUpperCase());  
         for (var j=1; j<strToAry[i].length; j++) {
             answer = answer + (strToAry[i].charAt(j));
         }  
-        answer = answer + ' ';
+        answer = answer + ' '; //concatenate
     }
     return answer;
 }
